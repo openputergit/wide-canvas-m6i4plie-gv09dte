@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safetrust Consultancy - Solar Solutions & More</title>
+    <meta name="description" content="Leading solar panel installation company in Nagpur. Get expert consultation for rooftop solar, architecture, and interior design solutions.">
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .calculator-glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="font-poppins bg-gradient-to-br from-blue-400 via-teal-500 to-emerald-400 min-h-screen">
+    <!-- Navigation -->
+    <nav class="glass fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-white font-bold text-2xl">Safetrust</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-emerald-200">Home</a>
+                    <a href="#services" class="text-white hover:text-emerald-200">Services</a>
+                    <a href="#calculator" class="text-white hover:text-emerald-200">Calculator</a>
+                    <a href="#portfolio" class="text-white hover:text-emerald-200">Portfolio</a>
+                    <a href="#contact" class="text-white hover:text-emerald-200">Contact</a>
+                </div>
+                <button class="md:hidden text-white" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 glass z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="text-white text-xl">Home</a>
+            <a href="#services" class="text-white text-xl">Services</a>
+            <a href="#calculator" class="text-white text-xl">Calculator</a>
+            <a href="#portfolio" class="text-white text-xl">Portfolio</a>
+            <a href="#contact" class="text-white text-xl">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <div class="glass rounded-2xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Transform Your Home with Solar Energy</h1>
+                        <p class="text-white/90 text-lg mb-8">Join over 50+ satisfied customers who've switched to clean energy. Save money while saving the planet.</p>
+                        <a href="#contact" class="bg-emerald-500 text-white px-8 py-3 rounded-lg hover:bg-emerald-600 transition">Get Free Quote</a>
+                    </div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276" alt="Solar Panels" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-xl p-6">
+                    <i class="bi bi-sun text-4xl text-white mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Solar Installation</h3>
+                    <p class="text-white/90">Professional rooftop solar panel installation with expert consultation and maintenance.</p>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <i class="bi bi-building text-4xl text-white mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Architecture</h3>
+                    <p class="text-white/90">Sustainable architectural design solutions for modern living spaces.</p>
+                </div>
+                <div class="glass rounded-xl p-6">
+                    <i class="bi bi-house-heart text-4xl text-white mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-4">Interior Design</h3>
+                    <p class="text-white/90">Creative interior design services that blend aesthetics with functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section id="calculator" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="glass rounded-2xl p-8">
+                <h2 class="text-3xl font-bold text-white text-center mb-8">Solar Savings Calculator</h2>
+                <div class="calculator-glass rounded-xl p-6 max-w-md mx-auto">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-white block mb-2">Monthly Electricity Bill (₹)</label>
+                            <input type="number" id="monthlyBill" class="w-full px-4 py-2 rounded-lg bg-white/10 text-white" placeholder="Enter amount">
+                        </div>
+                        <div>
+                            <label class="text-white block mb-2">Daily Sunlight Hours</label>
+                            <input type="number" id="sunlightHours" class="w-full px-4 py-2 rounded-lg bg-white/10 text-white" placeholder="Average hours">
+                        </div>
+                        <button onclick="calculateSavings()" class="w-full bg-emerald-500 text-white py-3 rounded-lg hover:bg-emerald-600 transition">Calculate Savings</button>
+                        <div id="savings" class="text-white text-center hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">Our Projects</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Residential Solar</h3>
+                        <p class="text-white/90 mb-4">10kW Installation</p>
+                        <div class="flex items-center">
+                            <i class="bi bi-star-fill text-yellow-400 mr-1"></i>
+                            <span class="text-white">4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- More portfolio items... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="glass rounded-2xl p-8">
+                <h2 class="text-3xl font-bold text-white text-center mb-8">Get in Touch</h2>
+                <form class="max-w-md mx-auto">
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-white/70">
+                        <input type="email" placeholder="Email Address" class="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-white/70">
+                        <input type="tel" placeholder="Phone Number" class="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-white/70">
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 rounded-lg bg-white/10 text-white placeholder-white/70"></textarea>
+                        <button type="submit" class="w-full bg-emerald-500 text-white py-3 rounded-lg hover:bg-emerald-600 transition">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-xl mb-4">Safetrust</h3>
+                    <p class="text-white/90">Your trusted partner in sustainable energy solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-white/90 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-white/90 hover:text-white">Services</a></li>
+                        <li><a href="#portfolio" class="text-white/90 hover:text-white">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="text-white/90">Nagpur, Maharashtra</li>
+                        <li class="text-white/90">contact@safetrust.com</li>
+                        <li class="text-white/90">+91 1234567890</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-emerald-200"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-emerald-200"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-emerald-200"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Solar savings calculator
+        function calculateSavings() {
+            const monthlyBill = parseFloat(document.getElementById('monthlyBill').value);
+            const sunlightHours = parseFloat(document.getElementById('sunlightHours').value);
+            
+            if (isNaN(monthlyBill) || isNaN(sunlightHours)) {
+                alert('Please enter valid numbers');
+                return;
+            }
+
+            // Simple calculation (can be made more complex based on requirements)
+            const annualSavings = monthlyBill * 12 * 0.7; // Assuming 70% savings
+            const breakEvenMonths = Math.round((350000) / (monthlyBill * 0.7)); // Assuming 3.5L installation cost
+
+            const savingsDiv = document.getElementById('savings');
+            savingsDiv.innerHTML = `
+                <p class="mb-2">Estimated Annual Savings: ₹${annualSavings.toFixed(2)}</p>
+                <p>Break-even Period: ${breakEvenMonths} months</p>
+            `;
+            savingsDiv.classList.remove('hidden');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
